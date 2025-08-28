@@ -51,9 +51,21 @@
     0%, 100% { opacity: 0.3; transform: scale(1); }
     50% { opacity: 0.6; transform: scale(1.1); }
   }
-  
   /* Dream text utilities - only add what Tailwind doesn't provide */
   .dream-text {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* 🎯 INITIAL STATE: Hide title before GSAP takes over */
+  .dream-title {
+    opacity: 0;              /* Force invisible - override any other styles */
+    transform: translateX(220vw);       /* Start off-screen to the right */
+    will-change: transform, opacity;    /* Optimize for animations */
+  }
+  
+  /* 🎯 ENSURE TITLE STAYS HIDDEN UNTIL GSAP IS READY */
+  .dream-title:not([style*="opacity"]) {
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 }

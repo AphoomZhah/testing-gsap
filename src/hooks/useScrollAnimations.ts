@@ -51,7 +51,7 @@ export const useScrollAnimations = () => {
     gsap.fromTo('.dream-title', 
       {
         // START STATE: Element starts off-screen to the right and invisible
-        x: '180vw',        // 🎯 RESPONSIVE: 100% of viewport width (works on any screen!)
+        x: '200vw',        // 🎯 RESPONSIVE: 200% of viewport width (matches CSS!)
         opacity: 0         // Completely invisible
       },
       {
@@ -68,10 +68,25 @@ export const useScrollAnimations = () => {
           trigger: '.dream-title',        // Watch this element
           start: 'top bottom',           // Start when element top hits bottom of screen
           end: 'bottom top',             // End when element bottom hits top of screen
-          scrub: true                    // 🎯 KEY: Animation follows scroll position!
+          scrub: true,                   // 🎯 KEY: Animation follows scroll position!
+          pin: false,                    // 🎯 PIN: Lock section in place during animation!
+          pinSpacing: false              // Maintain scroll space
         }
       }
     )
+
+    // ANIMATION 2: Background image moves after title animation completes
+    gsap.to('section:has(img) img', {
+      top: 0,                          // Move image up 100px
+      scale: 1.5,                       // Slightly scale up the image
+      scrollTrigger: {
+        trigger: 'section:has(img)',     // Watch the section with image
+        start: 'top top',                // Start when section top hits screen top
+        end: 'bottom top',               // End when section bottom hits screen top
+        scrub: true,                     // Follow scroll position
+        pin: true                       // Don't pin this section
+      }
+    })
 
     // TODO: Add more animations here
     console.log('🎯 First animation added: Title slide-in from left!')
