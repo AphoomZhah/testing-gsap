@@ -97,21 +97,21 @@ export const useScrollAnimations = () => {
     // STEP 1: fade in image
     tl.fromTo(".section-2 img",
       { opacity: 0 },
-      { opacity: 1, duration: 1 }
+      { opacity: 1, duration: 3 },
     );
 
-    // STEP 2: then scale image (starts after opacity finishes)
-    tl.to(".section-2 img",
-      { scale: 1.5, duration: 2 },
-      ">"); // ">" means right after previous ends
-
-    // STEP 3: halfway through scaling, bring in text
+    // STEP 2: halfway through scaling, bring in text
     tl.fromTo(".section-2 .dream-title",
       { x: "200vw", opacity: 0 },
-      { x: 0, opacity: 1, duration: 1 },
-      "-=1" // <-- starts 1s before scaling ends (overlap)
+      { x: 0, opacity: 1, duration: 8 },
+      0
     );
 
+    // STEP 3: then scale image (starts after opacity finishes)
+    tl.to(".section-2 img",
+      { scale: 1.7, duration: 8 },
+      0
+    ); // ">" means right after previous ends
   }
 
   useEffect(() => {
