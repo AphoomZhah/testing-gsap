@@ -80,28 +80,39 @@ export const useScrollAnimations = () => {
       }
     });
 
-    // STEP 1: fade in image
-    tl2.fromTo(".section-2 img",
-      { opacity: 0 },
-      { opacity: 1, duration: 4},
-    );
-
     // STEP 2: halfway through scaling, bring in text
     tl2.fromTo(".section-2 .dream-title",
       { x: "200vw", opacity: 0 },
-      { x: 0, opacity: 1, duration: 8, delay: 3 },
+      { x: 0, opacity: 1, duration: 8},
       0
     );
 
-    // STEP 3: then scale image (starts after opacity finishes)
-    tl2.to(".section-2 img",
-      { scale: 1.7, duration: 8},
-      0
-    ); // ">" means right after previous ends
+    // STEP 1: fade in image
+    tl2.fromTo(".section-2 .main-img",
+      { opacity: 0 },
+      { opacity: 1, duration: 4, delay: 3},
+    );
 
-    tl2.fromTo(".section-2 img",
+    // STEP 3: then scale image (starts after opacity finishes)
+    tl2.to(".section-2 .main-img",
+      { scale: 1.7, duration: 8, delay: 3},
+    );
+
+    tl2.fromTo(".section-2 .main-img",
       { opacity: 1 },
-      { opacity: 0, duration: 3 },
+      { opacity: 0, duration: 8, delay: 8 },
+    );
+
+    tl2.fromTo(".sample-grid",
+      { x: "200vw", opacity: 0 },
+      { x: 0, opacity: 1, duration: 8},
+      "-=1" // overlap with image fade out
+    );
+
+    tl2.fromTo(".section-2 .dream-title",
+      { x: "0", opacity: 1 },
+      { x: "-200vw", opacity: 0, duration: 8},
+      "-=1"
     );
 
   }
