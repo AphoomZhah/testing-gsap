@@ -47,44 +47,30 @@ export const useScrollAnimations = () => {
   const createBasicScrollAnimations = () => {
     if (!appRef.current) return
 
-    // ANIMATION: Background image moves after title animation completes
-     gsap.to('.section-1', {
-       top: 0,                          // Move image up 100px// Slightly scale up the image
-       scrollTrigger: {
-         trigger: '.section-1',     // Watch the section with image
-         start: 'top top',                // Start when section top hits screen top
-         end: 'bottom top',               // End when section bottom hits screen top
-         scrub: true,                     // Follow scroll position
-         pin: true                       // Don't pin this section
-       }
-    })
-
-    // ANIMATION: Title fades out during scroll
-    gsap.fromTo('.section-1 .dream-title', 
-      {
-        // START: Image completely invisible
-        opacity: 0,
-        scale: 0.6,
-      },
-      {
-        // END: Image fully visible
-        opacity: 1,
-        scale: 1,
-        
-        // SCROLL TRIGGER SETTINGS
-        scrollTrigger: {
-          trigger: '.section-1 .dream-title',     // Watch the section with image
-          start: 'center center',             // Start when section top hits bottom of screen
-          end: 'bottom top',               // End when section bottom hits top of screen
-          scrub: true,                     // Follow scroll position exactly
-          pin: false
-        }
+     // SECTION 2 Timeline
+     let tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-1",
+        start: "top top",     // when section hits center of screen
+        end: "bottom top",
+        scrub: true,
+        pin: true,               // keep section pinned during sequence
       }
-    )
+    });
+
+    tl1.fromTo(".section-1 .title-01",
+      { opacity: 0 },
+      { opacity: 1, duration: 3 },
+    );
+
+    tl1.fromTo(".section-1 .title-02",
+      { opacity: 0 },
+      { opacity: 1, duration: 3, delay: 8 },
+    );
 
 
     // SECTION 2 Timeline
-    let tl = gsap.timeline({
+    let tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".section-2",
         start: "top top",     // when section hits center of screen
@@ -95,23 +81,29 @@ export const useScrollAnimations = () => {
     });
 
     // STEP 1: fade in image
-    tl.fromTo(".section-2 img",
+    tl2.fromTo(".section-2 img",
       { opacity: 0 },
-      { opacity: 1, duration: 3 },
+      { opacity: 1, duration: 3, delay: 2 },
     );
 
     // STEP 2: halfway through scaling, bring in text
-    tl.fromTo(".section-2 .dream-title",
+    tl2.fromTo(".section-2 .dream-title",
       { x: "200vw", opacity: 0 },
-      { x: 0, opacity: 1, duration: 8 },
+      { x: 0, opacity: 1, duration: 8, delay: 2 },
       0
     );
 
     // STEP 3: then scale image (starts after opacity finishes)
-    tl.to(".section-2 img",
-      { scale: 1.7, duration: 8 },
+    tl2.to(".section-2 img",
+      { scale: 1.7, duration: 8, delay: 1 },
       0
     ); // ">" means right after previous ends
+
+    tl2.fromTo(".section-2 img",
+      { opacity: 1 },
+      { opacity: 0, duration: 3 },
+    );
+
   }
 
   useEffect(() => {

@@ -34,8 +34,11 @@ function App() {
       <section className="section-1 h-screen relative overflow-hidden bg-[#151515] void-space" style={{ marginBottom: '-1px' }}>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-gray-300 mx-auto px-6">
-            <div className="dream-title ttext-9xl md:text-9xl tracking-wide">
-              Then I see them
+            <div className="dream-title title-01 text-9xl md:text-9xl tracking-wide">
+              Then I see them...
+            </div>
+            <div className="dream-title title-02 text-9xl md:text-9xl tracking-wide">
+              Again.
             </div>
           </div>
         </div>
