@@ -2,15 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🎨 SATOSHI FONT FAMILY */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/satoshi/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('./assets/fonts/satoshi/fonts/Satoshi-Variable.woff') format('woff'),
+       url('./assets/fonts/satoshi/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/satoshi/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+       url('./assets/fonts/satoshi/fonts/Satoshi-VariableItalic.woff') format('woff'),
+       url('./assets/fonts/satoshi/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Debug: Check if this CSS file is loading */
 
 @layer base {
   html {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Satoshi', system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
   
   body {
     overflow-x: hidden;
+    font-family: 'Satoshi', system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
 }
 

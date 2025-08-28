@@ -88,7 +88,7 @@ export const useScrollAnimations = () => {
         // SCROLL TRIGGER SETTINGS
         scrollTrigger: {
           trigger: 'section:has(img)',     // Watch the section with image
-          start: 'top bottom',             // Start when section top hits bottom of screen
+          start: 'center center',             // Start when section top hits bottom of screen
           end: 'bottom top',               // End when section bottom hits top of screen
           scrub: true,                     // Follow scroll position exactly
           pin: false

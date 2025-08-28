@@ -30,14 +30,14 @@ function App() {
   return (
     <div ref={appRef} className="relative">
       {/* Dream 01 - Identity Dissolving */}
-      <section className="h-screen relative overflow-hidden">
+      <section className="h-screen relative overflow-hidden bg-[#151515]">
         <div className="absolute inset-0">
           <img
             src={dream01}
             alt="Blurred head - identity dissolving"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         </div>
 
         <div className="relative z-10 h-full flex items-center justify-center">
