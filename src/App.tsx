@@ -50,7 +50,7 @@ function App() {
       </section>
 
       {/* Empty Dark Section - Breathing Room */}
-      <section className="h-screen relative overflow-hidden bg-[#252525] void-space">
+      <section className="h-screen relative overflow-hidden bg-[#151515] void-space">
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-gray-300 max-w-md mx-auto px-6">
             <p className="text-sm md:text-base tracking-widest uppercase">

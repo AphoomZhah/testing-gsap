@@ -47,8 +47,34 @@ export const useScrollAnimations = () => {
   const createBasicScrollAnimations = () => {
     if (!appRef.current) return
 
-    // TODO: Add your first animation here
-    console.log('🎯 Ready to add animations!')
+    // ANIMATION 1: Title slides in from the left DURING scroll
+    gsap.fromTo('.dream-title', 
+      {
+        // START STATE: Element starts off-screen to the right and invisible
+        x: '180vw',        // 🎯 RESPONSIVE: 100% of viewport width (works on any screen!)
+        opacity: 0         // Completely invisible
+      },
+      {
+        // END STATE: Element moves to normal position and becomes visible
+        x: 0,              // Move to normal position (x: 0)
+        opacity: 1,        // Fully visible
+        
+        // ANIMATION SETTINGS
+        duration: 1,       // Total animation duration (will be controlled by scroll)
+        ease: 'none',      // Linear movement (no easing) for smooth scroll control
+        
+        // SCROLL TRIGGER SETTINGS
+        scrollTrigger: {
+          trigger: '.dream-title',        // Watch this element
+          start: 'top bottom',           // Start when element top hits bottom of screen
+          end: 'bottom top',             // End when element bottom hits top of screen
+          scrub: true                    // 🎯 KEY: Animation follows scroll position!
+        }
+      }
+    )
+
+    // TODO: Add more animations here
+    console.log('🎯 First animation added: Title slide-in from left!')
   }
 
   useEffect(() => {
