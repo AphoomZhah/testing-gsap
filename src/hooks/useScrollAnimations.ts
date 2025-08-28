@@ -47,60 +47,8 @@ export const useScrollAnimations = () => {
   const createBasicScrollAnimations = () => {
     if (!appRef.current) return
 
-    // BASIC SCROLL-DRIVEN FEATURES - Just the essentials
-
-    // 1. Simple title fade-in
-    gsap.fromTo('.dream-title', 
-      { 
-        y: 50, 
-        opacity: 0 
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.dream-title',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    )
-
-    // 2. Simple text reveal
-    gsap.fromTo('.dream-text', 
-      { 
-        y: 30
-        // opacity: 0  // Temporarily removed to test text color
-      },
-      {
-        y: 0,
-        // opacity: 1,  // Temporarily removed to test text color
-        duration: 0.8,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.dream-text',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    )
-
-    // 3. Simple image scale on scroll
-    gsap.to('section:has(img) img', {
-      scale: 1.1,
-      duration: 2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: 'section:has(img)',
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true
-      }
-    })
+    // TODO: Add your first animation here
+    console.log('🎯 Ready to add animations!')
   }
 
   useEffect(() => {

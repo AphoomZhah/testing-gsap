@@ -50,13 +50,9 @@ function App() {
       </section>
 
       {/* Empty Dark Section - Breathing Room */}
-      <section className="h-screen relative overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black void-space">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-        </div>
-
+      <section className="h-screen relative overflow-hidden bg-[#252525] void-space">
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center text-gray-400 max-w-md mx-auto px-6">
+          <div className="text-center text-gray-300 max-w-md mx-auto px-6">
             <p className="text-sm md:text-base tracking-widest uppercase">
               Between Dreams
             </p>
