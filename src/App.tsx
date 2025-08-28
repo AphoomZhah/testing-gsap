@@ -29,22 +29,34 @@ function App() {
 
   return (
     <div ref={appRef} className="relative">
-      {/* Dream 01 - Identity Dissolving */}
-      <section className="h-screen relative overflow-hidden bg-[#151515]">
+
+      {/* Empty Dark Section - Breathing Room */}
+      <section className="section-1 h-screen relative overflow-hidden bg-[#151515] void-space">
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="text-center text-gray-300 mx-auto px-6">
+            <div className="dream-title ttext-9xl md:text-9xl tracking-wide">
+              Then I see them
+            </div>
+          </div>
+        </div>
+      </section>      
+      
+      {/* Faces made of eyes */}
+      <section className="section-2 h-screen relative overflow-hidden bg-[#151515]">
         <div className="absolute inset-0">
           <img
             src={dream01}
             alt="Blurred head - identity dissolving"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
 
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-white mx-auto px-6">
-            <h2 className="dream-title text-9xl md:text-9xl font-light mb-8 tracking-wide">
+            <div className="dream-title text-9xl md:text-9xl font-light mb-8 tracking-wide">
               Faces made of eyes
-            </h2>
+            </div>
           </div>
         </div>
       </section>
