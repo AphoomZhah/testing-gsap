@@ -31,7 +31,7 @@ function App() {
     <div ref={appRef} className="relative">
 
       {/* Empty Dark Section - Breathing Room */}
-      <section className="section-1 h-screen relative overflow-hidden bg-[#151515] void-space">
+      <section className="section-1 h-screen relative overflow-hidden bg-[#151515] void-space" style={{ marginBottom: '-1px' }}>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-gray-300 mx-auto px-6">
             <div className="dream-title ttext-9xl md:text-9xl tracking-wide">
@@ -42,7 +42,7 @@ function App() {
       </section>      
       
       {/* Faces made of eyes */}
-      <section className="section-2 h-screen relative overflow-hidden bg-[#151515]">
+      <section className="section-2 h-screen relative overflow-hidden bg-[#151515]" style={{ marginTop: '-1px', marginBottom: '-1px' }}>
         <div className="absolute inset-0">
           <img
             src={dream01}
@@ -62,7 +62,7 @@ function App() {
       </section>
 
       {/* Empty Dark Section - Breathing Room */}
-      <section className="h-screen relative overflow-hidden bg-[#151515] void-space">
+      <section className="h-screen relative overflow-hidden bg-[#151515] void-space" style={{ marginTop: '-1px' }}>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-gray-300 max-w-md mx-auto px-6">
             <p className="text-sm md:text-base tracking-widest uppercase">

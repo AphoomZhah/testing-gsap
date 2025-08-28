@@ -48,15 +48,15 @@ export const useScrollAnimations = () => {
     if (!appRef.current) return
 
     // ANIMATION: Background image moves after title animation completes
-    gsap.to('.section-1', {
-      top: 0,                          // Move image up 100px// Slightly scale up the image
-      scrollTrigger: {
-        trigger: '.section-1',     // Watch the section with image
-        start: 'top top',                // Start when section top hits screen top
-        end: 'bottom top',               // End when section bottom hits screen top
-        scrub: true,                     // Follow scroll position
-        pin: true                       // Don't pin this section
-      }
+     gsap.to('.section-1', {
+       top: 0,                          // Move image up 100px// Slightly scale up the image
+       scrollTrigger: {
+         trigger: '.section-1',     // Watch the section with image
+         start: 'top top',                // Start when section top hits screen top
+         end: 'bottom top',               // End when section bottom hits screen top
+         scrub: true,                     // Follow scroll position
+         pin: true                       // Don't pin this section
+       }
     })
 
     // ANIMATION: Title fades out during scroll
@@ -64,12 +64,12 @@ export const useScrollAnimations = () => {
       {
         // START: Image completely invisible
         opacity: 0,
-        scale: 0.8,
+        scale: 0.6,
       },
       {
         // END: Image fully visible
         opacity: 1,
-        scale: 1.3,
+        scale: 1,
         
         // SCROLL TRIGGER SETTINGS
         scrollTrigger: {
