@@ -75,6 +75,27 @@ export const useScrollAnimations = () => {
       }
     )
 
+    // ANIMATION 2: Image fades in from 0 to 100% opacity during scroll
+    gsap.fromTo('section:has(img) img', 
+      {
+        // START: Image completely invisible
+        opacity: 0
+      },
+      {
+        // END: Image fully visible
+        opacity: 1,
+        
+        // SCROLL TRIGGER SETTINGS
+        scrollTrigger: {
+          trigger: 'section:has(img)',     // Watch the section with image
+          start: 'top bottom',             // Start when section top hits bottom of screen
+          end: 'bottom top',               // End when section bottom hits top of screen
+          scrub: true,                     // Follow scroll position exactly
+          pin: false
+        }
+      }
+    )
+
     // ANIMATION 2: Background image moves after title animation completes
     gsap.to('section:has(img) img', {
       top: 0,                          // Move image up 100px
