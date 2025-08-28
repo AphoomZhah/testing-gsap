@@ -83,19 +83,19 @@ export const useScrollAnimations = () => {
     // STEP 1: fade in image
     tl2.fromTo(".section-2 img",
       { opacity: 0 },
-      { opacity: 1, duration: 3, delay: 2 },
+      { opacity: 1, duration: 4},
     );
 
     // STEP 2: halfway through scaling, bring in text
     tl2.fromTo(".section-2 .dream-title",
       { x: "200vw", opacity: 0 },
-      { x: 0, opacity: 1, duration: 8, delay: 2 },
+      { x: 0, opacity: 1, duration: 8, delay: 3 },
       0
     );
 
     // STEP 3: then scale image (starts after opacity finishes)
     tl2.to(".section-2 img",
-      { scale: 1.7, duration: 8, delay: 1 },
+      { scale: 1.7, duration: 8},
       0
     ); // ">" means right after previous ends
 
