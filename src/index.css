@@ -82,7 +82,7 @@
   overflow: hidden;
 }
 
-.section-2 img {
+.section-2 .main-img {
   position: absolute;
   top: 0;          /* lock to top */
   left: 0;         /* lock to left */
@@ -95,6 +95,6 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: 100%;
+  width: 150vw;
   height: 50vh;
 }

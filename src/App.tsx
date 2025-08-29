@@ -62,10 +62,10 @@ function App() {
             </div>
             {/* Sample Grid */}
             <div className="sample-grid absolute inset-0 grid grid-cols-4 gap-4">
-              <img src={dream01} alt="Face 1" className="object-cover"/>
-              <img src={dream01} alt="Face 2" className="object-cover"/>
-              <img src={dream01} alt="Face 3" className="object-cover"/>
-              <img src={dream01} alt="Face 4" className="object-cover"/>
+              <img src={dream01} alt="Face 1" className="object-cover h-full"/>
+              <img src={dream01} alt="Face 2" className="object-cover h-full"/>
+              <img src={dream01} alt="Face 3" className="object-cover h-full"/>
+              <img src={dream01} alt="Face 4" className="object-cover h-full"/>
             </div>
             {/* Sample Grid */}
           </div>
@@ -80,14 +80,6 @@ function App() {
               Between Dreams
             </p>
           </div>
-          {/* Sample Grid */}
-          <div className="sample-grid absolute inset-0 grid grid-cols-4 gap-4 opacity-0">
-              <img src={dream01} alt="Face 1" className="object-cover"/>
-              <img src={dream01} alt="Face 2" className="object-cover"/>
-              <img src={dream01} alt="Face 3" className="object-cover"/>
-              <img src={dream01} alt="Face 4" className="object-cover"/>
-            </div>
-            {/* Sample Grid */}
         </div>
       </section>
     </div>

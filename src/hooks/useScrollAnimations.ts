@@ -70,50 +70,58 @@ export const useScrollAnimations = () => {
 
 
     // SECTION 2 Timeline
-    let tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section-2",
-        start: "top top",     // when section hits center of screen
-        end: "bottom top",
-        scrub: true,
-        pin: true,               // keep section pinned during sequence
-      }
-    });
+  let tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-2",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true, // keep section pinned during sequence
+    }
+  });
 
-    // STEP 2: halfway through scaling, bring in text
-    tl2.fromTo(".section-2 .dream-title",
-      { x: "200vw", opacity: 0 },
-      { x: 0, opacity: 1, duration: 8},
-      0
-    );
+  // --- Title enters ---
+  tl2.fromTo(".section-2 .dream-title",
+    { x: "200vw", opacity: 0 },
+    { x: 0, opacity: 1, duration: 8 },
+    "start" // label
+  );
 
-    // STEP 1: fade in image
-    tl2.fromTo(".section-2 .main-img",
-      { opacity: 0 },
-      { opacity: 1, duration: 4, delay: 3},
-    );
+  // --- Main image fades in + zooms ---
+  tl2.fromTo(".section-2 .main-img",
+    { opacity: 0 },
+    { opacity: 1, duration: 4 },
+    "start+=3" // start 3s after title starts
+  );
 
-    // STEP 3: then scale image (starts after opacity finishes)
-    tl2.to(".section-2 .main-img",
-      { scale: 1.7, duration: 8, delay: 3},
-    );
+  tl2.to(".section-2 .main-img",
+    { scale: 1.7, duration: 8 },
+    "start+=3"
+  );
 
-    tl2.fromTo(".section-2 .main-img",
-      { opacity: 1 },
-      { opacity: 0, duration: 8, delay: 8 },
-    );
+  // --- Main image fades out ---
+  tl2.to(".section-2 .main-img",
+    { opacity: 0, duration: 8 },
+    "start+=11" // starts later in the flow
+  );
 
-    tl2.fromTo(".sample-grid",
-      { x: "200vw", opacity: 0 },
-      { x: 0, opacity: 1, duration: 8},
-      "-=1" // overlap with image fade out
-    );
+  // --- Grid slides in (push effect) ---
+  tl2.fromTo(".sample-grid",
+    { x: "200vw", opacity: 0 },
+    {
+      x: (i, el) => `-${el.scrollWidth - window.innerWidth}px`, // dynamic width calc
+      opacity: 1,
+      duration: 12,
+      ease: "power1.inOut"
+    },
+    "start+=10" // align so it overlaps with title fade-out
+  );
 
-    tl2.fromTo(".section-2 .dream-title",
-      { x: "0", opacity: 1 },
-      { x: "-200vw", opacity: 0, duration: 8},
-      "-=1"
-    );
+  // --- Title slides out (pushed left) ---
+  tl2.to(".section-2 .dream-title",
+    { x: "-200vw", opacity: 0, duration: 8 },
+    "start+=10.5" // slight offset so it feels "pushed"
+  );
 
   }
 
